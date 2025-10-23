@@ -78,7 +78,7 @@ jobs:
           docker build -t "$IMAGE:$TAG" -t "$IMAGE:latest" .
           docker push "$IMAGE:$TAG"
           docker push "$IMAGE:latest"
-        # Docker 이미지 빌드 후 SHA/최신 태그로 푸시
+        # 현재 작업 디렉터리(backend 또는 루트)에 있는 Dockerfile을 사용해 이미지를 빌드하고 GHCR로 푸시
 
       - name: Persist image tag
         shell: bash
