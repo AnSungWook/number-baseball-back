@@ -75,15 +75,16 @@ npm start
 
 ```
 number-baseball-game/
-├── src/main/java/com/example/numberbaseball/
-│   ├── NumberBaseballApplication.java     # 메인 애플리케이션
-│   ├── controller/
-│   │   └── NumberBaseballController.java  # REST API 컨트롤러
-│   ├── service/
-│   │   └── NumberBaseballService.java     # 게임 로직 서비스
-│   └── model/
-│       ├── GameResult.java               # 게임 결과 모델
-│       └── GameState.java                # 게임 상태 모델
+├── backend/
+│   ├── src/main/java/com/example/numberbaseball/
+│   │   ├── NumberBaseballApplication.java   # 메인 애플리케이션
+│   │   ├── controller/                      # REST API 컨트롤러
+│   │   ├── model/                           # 도메인 모델
+│   │   └── service/                         # 게임 로직 서비스
+│   ├── src/main/resources/application.properties
+│   ├── Dockerfile                           # 백엔드 컨테이너 이미지
+│   ├── build.gradle                         # Gradle 설정
+│   └── .github/workflows/build-and-push.yml # GH Actions (backend)
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
@@ -92,8 +93,10 @@ number-baseball-game/
 │   │   │   └── GameResult.tsx            # 게임 결과 화면
 │   │   ├── App.tsx                       # 메인 앱 컴포넌트
 │   │   └── index.tsx                     # 엔트리 포인트
+│   ├── Dockerfile                          # 프론트엔드 컨테이너 이미지
 │   └── package.json
-└── build.gradle
+├── docker-compose.yml                      # 로컬 개발용 컴포즈 설정
+└── .github/workflows/                      # 공용 워크플로 디렉터리 (비어 있음)
 ```
 
 ## 🎮 게임 화면
