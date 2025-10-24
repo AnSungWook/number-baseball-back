@@ -69,7 +69,7 @@ npm start
 
 프론트엔드와 백엔드 통신 주의
 - 개발 중에는 package.json에 proxy 설정(`"proxy": "http://localhost:8080"`)이 있으면 `/api/*` 호출이 자동 프록시 됩니다.
-- proxy가 없을 경우 프론트에서 직접 `http://localhost:8080`으로 API를 호출하거나 CORS 설정을 확인하세요. (컨트롤러에는 localhost:3000을 허용하는 @CrossOrigin이 적용되어 있습니다.)
+- proxy가 없을 경우 프론트에서 직접 `http://localhost:8080`으로 API를 호출하거나 CORS 설정을 확인하세요. (기본으로 `http://localhost:3000`과 `http://127.0.0.1:3000`이 허용됩니다. 운영 환경에서는 환경 변수 `APP_CORS_ALLOWED_ORIGINS`를 통해 허용 도메인을 쉼표로 구분하여 지정하세요.)
 
 ## 📁 프로젝트 구조
 
